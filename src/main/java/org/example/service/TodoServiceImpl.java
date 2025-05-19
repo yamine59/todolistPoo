@@ -24,13 +24,11 @@ public class TodoServiceImpl implements TodoService{
     public void add(String name, String description) {
         todos.add(new Todo(c++,name,description));
 
-
     }
 
     @Override
     public void update(int id, String name, String description, boolean done) {
         todos.set(id,new Todo(id,name,description));
-
 
     }
 
