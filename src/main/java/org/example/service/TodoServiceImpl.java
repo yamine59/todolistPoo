@@ -7,6 +7,8 @@ import java.util.List;
 
 public class TodoServiceImpl implements TodoService{
 
+    private static int c =1;
+
     List<Todo> todos = new ArrayList<>();
     @Override
     public List<Todo> getAll() {
@@ -20,20 +22,16 @@ public class TodoServiceImpl implements TodoService{
 
     @Override
     public void add(String name, String description) {
-        todos.add(new Todo(name,description));
+        todos.add(new Todo(c++,name,description));
+
 
     }
 
     @Override
     public void update(int id, String name, String description, boolean done) {
-        for (Todo todo:todos){
-            if (todo.getId() == id){
-                todo.setName(name) ;
-                todo.setDescription(description);
-                todo.setDone(done);
-            }
+        todos.set(id,new Todo(id,name,description));
 
-        }
+
     }
 
     @Override
@@ -45,7 +43,7 @@ public class TodoServiceImpl implements TodoService{
     public void toggleDone(int id) {
         for (Todo todo:todos){
             if (todo.getId() == id){
-                todo.isDone();
+                todo.setDone(!todo.isDone());
             }
 
         }

@@ -6,9 +6,9 @@ public class Todo {
     private String name;
     private String description;
     private boolean done;
-    private static int id;
-    public Todo(String name, String description) {
-        id++;
+    private  int id;
+    public Todo(int id ,String name, String description) {
+        this.id = id;
         this.name = name;
         this.description = description;
     }
@@ -38,7 +38,7 @@ public class Todo {
     }
 
     public boolean isDone() {
-        return done;
+        return  done;
     }
 
     public void setDone(boolean done) {
@@ -47,6 +47,7 @@ public class Todo {
 
     @Override
     public String toString() {
-        return id+"- Todo :"+name+"\nStatus :"+ done+"\n"+description;
+
+        return getId()+"- Todo :"+name+"\nStatus :"+ done+"\n"+description;
     }
 }

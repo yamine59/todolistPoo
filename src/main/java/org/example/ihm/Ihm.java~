@@ -64,7 +64,7 @@ public class Ihm {
             if (!todo.isDone())
                 System.out.println(todo);
             }
-
+        }
     }
 
     private void updateTodo() {
