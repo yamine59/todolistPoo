@@ -22,7 +22,8 @@ public class Ihm {
             System.out.println("3. Modifier une tâche");
             System.out.println("4. Supprimer une tâche");
             System.out.println("5. Marquer tâche comme faite / non faite");
-            System.out.println("6. Quitter");
+            System.out.println("6. Afficher uniquement les tâches à faire");
+            System.out.println("7. Quitter");
             System.out.print("Votre choix : ");
             String input = scanner.nextLine();
 
@@ -32,7 +33,8 @@ public class Ihm {
                 case "3" -> updateTodo();
                 case "4" -> deleteTodo();
                 case "5" -> toggleTodo();
-                case "6" -> {
+                case "6" -> showTodoFalse();
+                case "7" -> {
                     System.out.println("Au revoir !");
                     return;
                 }
@@ -54,6 +56,14 @@ public class Ihm {
         System.out.println("\nListe des tâches :");
         for (Todo todo : service.getAll()) {
             System.out.println(todo);
+        }
+    }
+    private void showTodoFalse() {
+        System.out.println("\nListe des tâches :");
+        for (Todo todo : service.getAll()) {
+            if (!todo.isDone())
+                System.out.println(todo);
+            }
         }
     }
 

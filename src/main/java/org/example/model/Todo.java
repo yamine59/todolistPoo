@@ -2,13 +2,13 @@ package org.example.model;
 
 public class Todo {
 
-    private int id;
+
     private String name;
     private String description;
     private boolean done;
-
-    public Todo(int id, String name, String description) {
-        this.id = id;
+    private static int id;
+    public Todo(String name, String description) {
+        id++;
         this.name = name;
         this.description = description;
     }
@@ -43,5 +43,10 @@ public class Todo {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    @Override
+    public String toString() {
+        return id+"- Todo :"+name+"\nStatus :"+ done+"\n"+description;
     }
 }
