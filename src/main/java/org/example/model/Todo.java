@@ -47,7 +47,7 @@ public class Todo {
 
     @Override
     public String toString() {
-
-        return getId()+"- Todo :"+name+"\nStatus :"+ done+"\n"+description;
+        if (done ) return getId()+"- Todo :"+name+"\nStatus :"+ "FAIT"+"\n"+description;
+        else return getId()+"- Todo :"+name+"\nStatus :"+ "A FAIRE"+"\n"+description;
     }
 }
