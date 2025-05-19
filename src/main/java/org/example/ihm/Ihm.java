@@ -33,6 +33,7 @@ public class Ihm {
                 case "3" -> updateTodo();
                 case "4" -> deleteTodo();
                 case "5" -> toggleTodo();
+                case "8" -> toggleTodo();
                 case "6" -> showTodoFalse();
                 case "7" -> {
                     System.out.println("Au revoir !");
@@ -66,6 +67,7 @@ public class Ihm {
             }
 
     }
+
 
     private void updateTodo() {
         System.out.print("ID de la tâche à modifier : ");
