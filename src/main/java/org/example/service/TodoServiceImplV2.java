@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class TodoServiceImplV2 implements TodoService{
 
-    private static int c =0;
+    private static int c =1;
 
     private Map<Integer, Todo> todos = new HashMap<>();
     @Override

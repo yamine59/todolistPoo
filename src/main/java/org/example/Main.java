@@ -9,7 +9,7 @@ import org.example.service.TodoServiceImplV2;
 
 public class Main {
     public static void main(String[] args) {
-        TodoService service = new TodoServiceImpl(); // remplacer null par une instanciation d'une classe respectant l'interface TodoService
+        TodoService service = new TodoServiceImplV2(); // remplacer null par une instanciation d'une classe respectant l'interface TodoService
         Ihm ihm = new Ihm(service);
         ihm.start();
 
