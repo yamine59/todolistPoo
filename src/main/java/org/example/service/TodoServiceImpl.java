@@ -17,7 +17,12 @@ public class TodoServiceImpl implements TodoService{
 
     @Override
     public Todo getById(int id) {
-        return todos.get(id);
+        for (Todo todo:todos){
+            if (todo.getId() == id){
+                return todo;
+            }
+        }
+        return null;
     }
 
     @Override
@@ -28,7 +33,11 @@ public class TodoServiceImpl implements TodoService{
 
     @Override
     public void update(int id, String name, String description, boolean done) {
-        todos.set(id,new Todo(id,name,description));
+        Todo todoToUpdate = getById(id);
+        todoToUpdate.setName(name);
+        todoToUpdate.setDescription(description);
+        todoToUpdate.setDone(done);
+
 
     }
 
@@ -39,12 +48,7 @@ public class TodoServiceImpl implements TodoService{
 
     @Override
     public void toggleDone(int id) {
-        for (Todo todo:todos){
-            if (todo.getId() == id){
-                todo.setDone(!todo.isDone());
-            }
-
-        }
+        getById(id).setDone(!getById(id).isDone());
 
     }
 }
