@@ -5,7 +5,7 @@ import org.example.model.Todo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TodoServiceImpl implements TodoService{
+public class TodoServiceImplV1 implements TodoService{
 
     private static int c =1;
 
